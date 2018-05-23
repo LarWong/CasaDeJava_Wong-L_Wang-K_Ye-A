@@ -1,4 +1,11 @@
+/*
+Casa De Java - Kevin Wang, Larry Wong, Alvin Ye
+APCS2 pd8
+Lab4 - All That Bouncin’
+2018-05-23
+*/
 class Ball {
+  //vars (Ball info & movement)
   color c;
   float xCor;
   float yCor;
