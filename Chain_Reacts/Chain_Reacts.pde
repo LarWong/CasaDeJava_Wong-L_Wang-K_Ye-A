@@ -29,9 +29,8 @@ void draw() {
     clear(); //clears the clear to make it look like animation
     //tell each ball to move
     for (int ball = 0; ball < existingBalls; ball++) {
-      //each ball checks for collision and moves
+      //each ball moves
       balls[ball].move();
-      balls[ball].collide();
     }
   }
 }

@@ -43,6 +43,8 @@ class Ball {
 
   //determines what the ball does
   void move() {
+    //each ball checks for collision
+    collide();
     //if the ball does not collide with growing/shrinking ball
     if (this.state == MOVING) {
       //law of reflection
