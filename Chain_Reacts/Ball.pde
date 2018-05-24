@@ -10,7 +10,7 @@ class Ball {
   final static int GROWING = 1;
   final static int SHRINKING = 2;
   final static int DEAD = 3;
-  final static float CHANGE_FACTOR = .35;
+  final static float CHANGE_FACTOR = .25;
   final static int MAX_RADIUS = 100;
 
   //vars (Ball info & movement)
@@ -84,7 +84,7 @@ class Ball {
     if (this.state == 0) {
       //checks if there is a growing/shrinking ball touching this ball
       for ( int other = 0; other < existingBalls; other++) {
-        if (other != num && balls[other].state != MOVING && balls[other].state != DEAD) {
+        if (balls[other].state != MOVING && balls[other].state != DEAD) {
           //from edge of circle to egde of circle: the distance is 0 or less
           float distance = dist(this.xCor, this.yCor, balls[other].xCor, balls[other].xCor);
           if (distance <= CHANGE_FACTOR*(this.size + balls[other].size)) {
