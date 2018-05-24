@@ -79,7 +79,7 @@ class Ball {
   }
 
   //if the ball touches other ball
-  void collide( int num, Ball[] balls) {
+  void collide() {
     //the ball has to be moving to stop
     if (this.state == 0) {
       //checks if there is a growing/shrinking ball touching this ball

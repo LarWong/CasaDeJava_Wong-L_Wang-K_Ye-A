@@ -30,8 +30,8 @@ void draw() {
     //tell each ball to move
     for (int ball = 0; ball < existingBalls; ball++) {
       //each ball checks for collision and moves
-      balls[ball].collide(ball, balls);
       balls[ball].move();
+      balls[ball].collide();
     }
   }
 }
