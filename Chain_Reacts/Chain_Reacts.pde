@@ -5,21 +5,20 @@ Casa De Java - Kevin Wang, Larry Wong, Alvin Ye
  2018-05-24
  */
 
-final static int MAX_NUMBER = 1000;
+final static int MAX_NUMBER = 1000; //max number of balls in the container
 Ball[] balls; //array of ball objects
 boolean clicked = false;
-int existingBalls = 0;
-
-
+int existingBalls = 0; //num of balls that can act
 
 void setup() {
 
   background(15, 15, 15); //I don't want pure black
   size(600, 600); //canvas size
-  balls = new Ball[MAX_NUMBER]; //create array with random size
+  balls = new Ball[MAX_NUMBER]; //create array with MAX_NUMBER, 0 meaningful elements
   //instantiate balls
   for (int i = 0; i < (int)(random(30, 40)); i++) {
     balls[i] = new Ball(0);
+    //inc number of objects that are meaningful in the array
     existingBalls++;
   }
 }
