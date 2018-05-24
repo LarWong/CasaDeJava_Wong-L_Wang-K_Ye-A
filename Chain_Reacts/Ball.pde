@@ -1,5 +1,5 @@
 /*
-Casa De Java - Kevin Wang, Larry Wong, Alvin Ye
+ Casa De Java - Kevin Wang, Larry Wong, Alvin Ye
  APCS2 pd8
  Lab4 - All That Bouncin’
  2018-05-24
@@ -32,13 +32,12 @@ class Ball {
     this.xCor = random(this.size, 600 - this.size);
     this.yCor = random(this.size, 600 - this.size);
   }
-  
+
   //overloaded constr (for clicking)
-  Ball(int sVar, int mX, int mY){
+  Ball(int sVar, int mX, int mY) {
     this(sVar);
     this.xCor = mX;
     this.yCor = mY;
-  
   }
 
   //determines what the ball does
@@ -85,9 +84,9 @@ class Ball {
     //the ball has to be moving to stop
     if (this.state == 0) {
       //checks if there is a growing/shrinking ball touching this ball
-      for ( int other = 0; other < existingBalls; other++) {
+      for ( int other = 0; other < existingBalls; other++ ) {
         if (balls[other].state != MOVING && balls[other].state != DEAD) {
-          //from edge of circle to egde of circle: the distance is 0 or less
+          //from edge of circle to egde of circle
           float distance = dist(this.xCor, this.yCor, balls[other].xCor, balls[other].xCor);
           if (distance <= CHANGE_FACTOR*(this.size + balls[other].size)) {
             this.state = 1;//state change
