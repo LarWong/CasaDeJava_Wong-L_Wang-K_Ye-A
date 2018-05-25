@@ -5,7 +5,7 @@
  2018-05-24
  */
 
-final static int MAX_NUMBER = 1000; //max number of balls in the container
+final static int MAX_NUMBER = 1000; //max number of balls in canvas
 Ball[] balls; //array of ball objects
 int existingBalls = 0; //num of balls that can act
 
@@ -16,13 +16,13 @@ void setup() {
   //instantiate balls
   for (int i = 0; i < (int)(random(30, 40)); i++) {
     balls[i] = new Ball(0);
-    //inc number of objects that are meaningful in the array
+    //increment number of objects that are meaningful in the array
     existingBalls++;
   }
 }
 
 void draw() {
-  clear(); //clears the clear to make it look like animation
+  clear(); //clears to make it look like animation
   //tell each ball to move
   for (int ball = 0; ball < existingBalls; ball++) {
     //each ball moves

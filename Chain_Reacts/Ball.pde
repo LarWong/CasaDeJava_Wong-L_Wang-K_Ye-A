@@ -4,16 +4,18 @@
  Lab4 - All That Bouncin’
  2018-05-24
  */
+
 class Ball {
-  //Constant vars
+  //============final vars=========================
   final static int MOVING = 0;
   final static int GROWING = 1;
   final static int SHRINKING = 2;
   final static int DEAD = 3;
-  final static float CHANGE_FACTOR = 0.25; //used to multiple to the size in order to shorten distance needed to react
+  final static float CHANGE_FACTOR = 0.25; //change in radius
   final static int MAX_RADIUS = 100;
+  //===============================================
 
-  //vars (Ball info & movement)
+  //vars (ball info & movement)
   int state;
   color c;
   float xCor;
@@ -22,7 +24,7 @@ class Ball {
   float yVel;
   float size;
 
-  //default constr
+  //constructor with state var
   Ball(int sVar) {
     this.state = sVar;
     this.xVel = random(1, 10);
@@ -33,7 +35,7 @@ class Ball {
     this.yCor = random(this.size, 600 - this.size);
   }
 
-  //overloaded constr (for clicking)
+  //overloaded constructor with state var and mouse coordinates
   Ball(int sVar, int mX, int mY) {
     this(sVar);
     this.xCor = mX;
@@ -44,6 +46,7 @@ class Ball {
   void move() {
     //each ball checks for collision
     collide();
+
     //if the ball does not collide with growing/shrinking ball
     if (this.state == MOVING) {
       //law of reflection
