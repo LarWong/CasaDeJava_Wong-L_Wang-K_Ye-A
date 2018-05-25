@@ -10,7 +10,7 @@ Ball[] balls; //array of ball objects
 int existingBalls = 0; //num of balls that can act
 
 void setup() {
-  background(15, 15, 15); //I don't want pure black
+  background(15, 15, 15); 
   size(600, 600); //canvas size
   balls = new Ball[MAX_NUMBER]; //create array with MAX_NUMBER, 0 meaningful elements
   //instantiate balls
@@ -30,7 +30,7 @@ void draw() {
   }
 }
 void mouseClicked() {
-  //cerates new ball upon click
+  //creates a new GROWING ball upon click
   balls[existingBalls] = new Ball(1, mouseX, mouseY);
   existingBalls++;
 }
