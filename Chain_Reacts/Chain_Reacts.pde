@@ -31,6 +31,12 @@ void draw() {
 }
 void mouseClicked() {
   //creates a new GROWING ball upon click
+  for (int ballNum = 0; ballNum < existingBalls; ballNum++){
+    if (balls[ballNum].state == 3){
+      balls[ballNum] = new Ball(1, mouseX, mouseY);
+      return;
+    } 
+  } 
   balls[existingBalls] = new Ball(1, mouseX, mouseY);
   existingBalls++;
 }
