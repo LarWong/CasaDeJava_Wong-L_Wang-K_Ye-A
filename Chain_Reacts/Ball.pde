@@ -87,9 +87,9 @@ class Ball {
       for ( int other = 0; other < existingBalls; other++ ) {
         if (balls[other].state != MOVING && balls[other].state != DEAD) {
           //from edge of circle to egde of the other circles
-          float distance = dist(this.xCor, this.yCor, balls[other].xCor, balls[other].xCor); //Ball.pde has direct access to Chain_React's ball array
+          float distance = pow(this.xCor - balls[other].xCor, 2) + pow(this.yCor - balls[other].yCor, 2);
           //checks if the radii of the circles are close enough
-          if (distance <= CHANGE_FACTOR*(this.size + balls[other].size)) {
+          if (distance <= CHANGE_FACTOR*pow(this.size + balls[other].size, 2)) {
             this.state = 1;//state change
           }
         }
